@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uploading & Reading CSV file</title>
+</head>
+<body>
+    <form method = "POST" enctype="multipart/form-data" action = "/">
+        <label for="freq">Samples per second</label>
+        <input type="number" name="freq" id="freq">
+        <br/>
+        <label for="file">File</label>
+        <input type="file" name="file" id="file" accept=".csv">
+        <br/>
+        <input type = "submit" value="Process">
+    </form>
+    <hr>
+    <p style="color:green;"> {{ msg }} </p>
+    <form action="/show_graph" target="_blank">
+        <input type="submit" value="Show graph"/>
+    </form>
+    <form action="/download_processed" target="_blank">
+        <input type="submit" value="Download output (CSV)"/>
+    </form>
+</body>
+</html>

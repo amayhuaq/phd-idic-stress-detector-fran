@@ -15,8 +15,8 @@ def show_signals(eda_signal, stress_levels):
 
 
 def process_from_csv(filename, show_graph=False):
-    WIN_SIZE = 720  # 3 mins x 4 samples x 60 seconds
-    detector = StressDetector(3, 240)
+    WIN_SIZE = 3 # 720  # 3 mins x 4 samples x 60 seconds
+    detector = StressDetector(3, 1)
     df_data = pd.read_csv(filename, header=None)
     eda_data_raw = df_data[0].tolist()
     last_val = len(eda_data_raw) // WIN_SIZE
@@ -34,4 +34,5 @@ def process_from_csv(filename, show_graph=False):
 
 
 if __name__ == '__main__':
-    process_from_csv("EDA_raw.csv", True)
+    #process_from_csv("EDA_raw.csv", True)
+    process_from_csv("embrace.csv", True)
